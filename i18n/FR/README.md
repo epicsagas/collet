@@ -9,11 +9,6 @@ Orchestre n'importe quel LLM, n'importe quel agent CLI, à travers le TUI, le we
 
 Élimine à la source le problème de blocage ("stuck") courant dans les outils basés sur Node.js, offrant une intelligence de code de haut niveau et une édition précise sur la base sécurisée de Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,7 +42,6 @@ Orchestre n'importe quel LLM, n'importe quel agent CLI, à travers le TUI, le we
 
 ### Prérequis
 
-- Rust 1.78+ (Edition 2024)
 - Clé API d'un fournisseur de LLM
 
 ### Installation & Exécution
@@ -67,19 +61,9 @@ cargo binstall collet
 > Nécessite l'installation préalable de [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) :
 > `cargo install cargo-binstall`
 
-#### via crates.io
+#### Télécharger le binaire
 
-```bash
-cargo install collet
-```
-
-#### À partir des sources
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+Téléchargez la dernière version depuis [GitHub Releases](https://github.com/epicsagas/collet/releases).
 
 ### Configuration et Exécution
 ```bash
@@ -100,33 +84,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | Manuel d'utilisation complet — CLI, TUI, raccourcis clavier, commandes slash, multi-fournisseur, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | Référence complète de `config.toml` — fournisseurs, modèles, agents, télémétrie |
 | [CHANGELOG.md](../../CHANGELOG.md) | Historique des versions et notes de mise à jour |
-
-## Recherche
-
-La construction de collet a nécessité d'approfondir des problèmes qui n'ont pas encore de réponses évidentes — de la cohérence des agents à longue durée d'exécution sur des centaines de tours, au fonctionnement réel de la limitation de débit multi-fournisseur, en passant par le moment où le parallélisme multi-agents aide et celui où il ne fait qu'ajouter du bruit.
-
-Les analyses de recherche et d'ingénierie derrière ces décisions sont publiées sous la forme d'une série de rapports autonomes :
-
-| Rapport | Sujet |
-|--------|-------|
-| [Agent Loop](../../docs/research/agent-loop.md) | Moteur d'exécution, système de garde, bugs de fiabilité des flux, pipeline de compactage |
-| [Systèmes Multi-Agents](../../docs/research/multi-agent.md) | Modes Fork/Hive/Flock, tableau de bord SharedKnowledge, analyse des goulots d'étranglement, modèles de coordination |
-| [Gestion du Contexte](../../docs/research/context-management.md) | Stratégies de compactage, mise en cache des prompts, efficacité des tokens, enquête sur l'industrie |
-| [Architecture Multi-Fournisseur](../../docs/research/multi-provider.md) | Divergences d'API compatibles OpenAI, limitation de débit, conception de SDK de fournisseur |
-| [TUI & UX](../../docs/research/tui-ux.md) | Évaluation de l'UX, gestion du curseur multi-octets, intégration de l'interface Web |
-| [Analyse comparative & Évaluation](../../docs/research/benchmark-eval.md) | Benchmarks de modèles/modes, évaluation polyglotte, recherche sur la productivité |
-| [Moteur d'Évolution](../../docs/research/evolution-engine.md) | Boucle d'auto-amélioration, A-Evolve (arXiv:2602.00359), conception de cycle en 7 étapes |
-| [Contrôle à distance & Pont multi-machines](../../docs/research/remote.md) | Passerelles distantes, collaboration d'agents multi-machines, intégration ACP/IDE |
-
-## Infos de Build
-
-| Élément | Valeur |
-|------|-------|
-| Langage | Rust (Edition 2024) |
-| Fichiers sources | 176 |
-| Lignes de code | ~65 000 |
-| Tests | 959 |
-| Binaire de release | ~40 Mo (arm64) |
 
 ## Feuille de route
 

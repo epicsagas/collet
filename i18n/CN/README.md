@@ -9,11 +9,6 @@
 
 从源头上消除了基于 Node.js 的工具中常见的卡顿问题，在 Rust 的安全基础上提供高级代码智能和精确编辑。
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,7 +42,6 @@
 
 ### 核心要求
 
-- Rust 1.78+ (Edition 2024)
 - LLM 提供商 API 密钥
 
 ### 安装与运行
@@ -67,19 +61,9 @@ cargo binstall collet
 > 需要先安装 [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall)：
 > `cargo install cargo-binstall`
 
-#### 通过 crates.io
+#### 下载二进制文件
 
-```bash
-cargo install collet
-```
-
-#### 从源码编译
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+从 [GitHub Releases](https://github.com/epicsagas/collet/releases) 下载适合您平台的预编译二进制文件。
 
 ### 配置与运行
 ```bash
@@ -100,33 +84,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | 完整的用户手册 —— CLI、TUI、按键绑定、斜杠命令、多提供商、MCP、Soul.md |
 | [docs/config.md](../../docs/config.md) | `config.toml` 完整参考手册 —— 提供商、模型、代理、遥测 |
 | [CHANGELOG.md](../../CHANGELOG.md) | 版本历史和发行说明 |
-
-## 研究背景
-
-构建 collet 需要深入研究目前尚无明确答案的问题 —— 从在数百轮对话中保持长期运行代理的连贯性，到使多提供商速率限制真正起作用，再到弄清楚多代理并行何时有帮助、何时只会增加噪音。
-
-这些决策背后的研究和工程分析已作为一系列独立报告发布：
-
-| 报告 | 主题 |
-|--------|-------|
-| [代理循环](../../docs/research/agent-loop.md) | 执行引擎、防护系统、流可靠性漏洞、压缩流水线 |
-| [多代理系统](../../docs/research/multi-agent.md) | Fork/Hive/Flock 模式、SharedKnowledge 黑板、瓶颈分析、协作模式 |
-| [上下文管理](../../docs/research/context-management.md) | 压缩策略、提示词缓存、令牌效率、行业调查 |
-| [多提供商架构](../../docs/research/multi-provider.md) | OpenAI 兼容 API 差异、速率限制、提供商 SDK 设计 |
-| [TUI & UX](../../docs/research/tui-ux.md) | UX 评估、多字节光标处理、Web UI 集成 |
-| [基准测试与评估](../../docs/research/benchmark-eval.md) | 模型/模式基准、多语言评估、生产力研究 |
-| [进化引擎](../../docs/research/evolution-engine.md) | 自我改进循环、A-Evolve (arXiv:2602.00359)、七阶段周期设计 |
-| [远程控制与跨机器桥接](../../docs/research/remote.md) | 远程网关、跨机器代理协作、ACP/IDE 集成 |
-
-## 构建信息
-
-| 项目 | 数值 |
-|------|-------|
-| 语言 | Rust (Edition 2024) |
-| 源文件 | 176 |
-| 代码行数 | ~65,000 |
-| 测试用例 | 959 |
-| 发行版二进制大小 | ~40MB (arm64) |
 
 ## 路线图
 

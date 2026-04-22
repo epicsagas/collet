@@ -9,11 +9,6 @@ Orquestra qualquer LLM, qualquer agente CLI, através de TUI, web e IDE.
 
 Elimina o problema de travamento ("stuck") comum em ferramentas baseadas em Node.js na fonte, entregando inteligência de código de alto nível e edição precisa sobre a base de segurança do Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,10 +42,13 @@ Elimina o problema de travamento ("stuck") comum em ferramentas baseadas em Node
 
 ### Requisitos
 
-- Rust 1.78+ (Edição 2024)
 - Chave de API de provedor de LLM
 
 ### Instalação & Execução
+
+#### Baixar binário
+
+Baixe o binário mais recente em [GitHub Releases](https://github.com/epicsagas/collet/releases).
 
 #### via Homebrew (macOS)
 
@@ -66,20 +64,6 @@ cargo binstall collet
 
 > Requer [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) instalado primeiro:
 > `cargo install cargo-binstall`
-
-#### via crates.io
-
-```bash
-cargo install collet
-```
-
-#### Da fonte
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
 
 ### Configurar e Executar
 ```bash
@@ -100,33 +84,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | Manual do usuário completo — CLI, TUI, atalhos de teclado, comandos slash, multi-provedor, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | Referência completa do `config.toml` — provedores, modelos, agentes, telemetria |
 | [CHANGELOG.md](../../CHANGELOG.md) | Histórico de versões e notas de lançamento |
-
-## Pesquisa
-
-A construção do collet exigiu um mergulho profundo em problemas que ainda não têm respostas óbvias — desde manter agentes de longa duração coerentes ao longo de centenas de turnos, até fazer o rate limiting multi-provedor realmente funcionar, até descobrir quando o paralelismo multi-agente ajuda e quando apenas adiciona ruído.
-
-A análise de pesquisa e engenharia por trás dessas decisões é publicada como uma série de relatórios independentes:
-
-| Relatório | Tópico |
-|--------|-------|
-| [Agent Loop](../../docs/research/agent-loop.md) | Mecanismo de execução, sistema de guarda, bugs de confiabilidade de stream, pipeline de compactação |
-| [Sistemas Multi-Agente](../../docs/research/multi-agent.md) | Modos Fork/Hive/Flock, quadro negro SharedKnowledge, análise de gargalos, padrões de coordenação |
-| [Gerenciamento de Contexto](../../docs/research/context-management.md) | Estratégias de compactação, cache de prompt, eficiência de tokens, pesquisa da indústria |
-| [Arquitetura Multi-Provedor](../../docs/research/multi-provider.md) | Divergências de API compatíveis com OpenAI, rate limiting, design de SDK de provedor |
-| [TUI & UX](../../docs/research/tui-ux.md) | Avaliação de UX, manipulação de cursor multi-byte, integração Web UI |
-| [Benchmarking & Avaliação](../../docs/research/benchmark-eval.md) | Benchmarks de modelo/modo, avaliação poliglota, pesquisa de produtividade |
-| [Evolution Engine](../../docs/research/evolution-engine.md) | Loop de auto-aperfeiçoamento, A-Evolve (arXiv:2602.00359), design de ciclo de 7 estágios |
-| [Controle Remoto & Cross-Machine Bridge](../../docs/research/remote.md) | Gateways remotos, colaboração de agentes entre máquinas, integração ACP/IDE |
-
-## Informações de Build
-
-| Item | Valor |
-|------|-------|
-| Linguagem | Rust (Edição 2024) |
-| Arquivos fonte | 176 |
-| Linhas de código | ~65.000 |
-| Testes | 959 |
-| Binário de release | ~40MB (arm64) |
 
 ## Roadmap
 

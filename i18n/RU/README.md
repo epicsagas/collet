@@ -9,11 +9,6 @@
 
 Устраняет проблему «зависания» (stuck), характерную для инструментов на базе Node.js, в самом зародыше, обеспечивая высокоуровневый анализ кода и точное редактирование на безопасном фундаменте Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,10 +42,13 @@
 
 ### Требования
 
-- Rust 1.78+ (Edition 2024)
 - API-ключ провайдера LLM
 
 ### Установка и запуск
+
+#### Скачать бинарный файл
+
+Скачайте последнюю версию со страницы [GitHub Releases](https://github.com/epicsagas/collet/releases).
 
 #### через Homebrew (macOS)
 
@@ -66,20 +64,6 @@ cargo binstall collet
 
 > Сначала требуется установка [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall):
 > `cargo install cargo-binstall`
-
-#### через crates.io
-
-```bash
-cargo install collet
-```
-
-#### Из исходного кода
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
 
 ### Настройка и запуск
 ```bash
@@ -100,33 +84,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | Полное руководство пользователя — CLI, TUI, горячие клавиши, слеш-команды, мультипровайдерность, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | Полный справочник по `config.toml` — провайдеры, модели, агенты, телеметрия |
 | [CHANGELOG.md](../../CHANGELOG.md) | История версий и примечания к выпуску |
-
-## Исследования
-
-Создание collet потребовало глубокого погружения в проблемы, на которые пока нет очевидных ответов — от поддержания согласованности долгоживущих агентов на протяжении сотен шагов до того, как заставить rate limiting мультипровайдерности работать по-настоящему, и выяснения того, когда мультиагентный параллелизм помогает, а когда лишь создает шум.
-
-Результаты исследований и инженерный анализ этих решений опубликованы в серии отдельных отчетов:
-
-| Отчет | Тема |
-|--------|-------|
-| [Цикл агента](../../docs/research/agent-loop.md) | Движок выполнения, система защиты, баги надежности потока, конвейер сжатия |
-| [Мультиагентные системы](../../docs/research/multi-agent.md) | Режимы Fork/Hive/Flock, «черная доска» SharedKnowledge, анализ узких мест, паттерны координации |
-| [Управление контекстом](../../docs/research/context-management.md) | Стратегии сжатия, кэширование промптов, эффективность токенов, отраслевой обзор |
-| [Мультипровайдерная архитектура](../../docs/research/multi-provider.md) | Расхождения API, совместимых с OpenAI, ограничение частоты запросов, дизайн SDK провайдеров |
-| [TUI и UX](../../docs/research/tui-ux.md) | Оценка UX, обработка многобайтового курсора, интеграция с Web UI |
-| [Бенчмаркинг и оценка](../../docs/research/benchmark-eval.md) | Бенчмарки моделей/режимов, полиглот-оценка, исследования продуктивности |
-| [Движок эволюции](../../docs/research/evolution-engine.md) | Цикл самосовершенствования, A-Evolve (arXiv:2602.00359), дизайн 7-стадийного цикла |
-| [Удаленное управление и мост между машинами](../../docs/research/remote.md) | Удаленные шлюзы, совместная работа агентов на разных машинах, интеграция ACP/IDE |
-
-## Информация о сборке
-
-| Параметр | Значение |
-|------|-------|
-| Язык | Rust (Edition 2024) |
-| Исходные файлы | 176 |
-| Строк кода | ~65 000 |
-| Тесты | 959 |
-| Бинарный файл релиза | ~40 МБ (arm64) |
 
 ## Дорожная карта
 

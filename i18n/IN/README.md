@@ -9,11 +9,6 @@ TUI, वेब और IDE पर किसी भी LLM, किसी भी CL
 
 Node.js आधारित टूल में आम तौर पर होने वाली "अटकने" (stuck) की समस्या को जड़ से खत्म करता है, Rust की सुरक्षा पर उच्च-स्तरीय कोड इंटेलिजेंस और सटीक संपादन प्रदान करता है।
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,7 +42,6 @@ Node.js आधारित टूल में आम तौर पर होन
 
 ### आवश्यकताएं
 
-- Rust 1.78+ (Edition 2024)
 - LLM प्रोवाइडेड API की (key)
 
 ### इंस्टॉलेशन और रनिंग
@@ -67,19 +61,9 @@ cargo binstall collet
 > इसके लिए पहले [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) इंस्टॉल होना चाहिए:
 > `cargo install cargo-binstall`
 
-#### crates.io के माध्यम से
+#### बाइनरी डाउनलोड करें
 
-```bash
-cargo install collet
-```
-
-#### सोर्स से
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+नवीनतम संस्करण [GitHub Releases](https://github.com/epicsagas/collet/releases) से डाउनलोड करें।
 
 ### सेटअप और रन
 ```bash
@@ -100,33 +84,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | पूर्ण यूजर मैनुअल — CLI, TUI, की बाइंडिंग्स, स्लैश कमांड्स, मल्टी-प्रोवाइडर, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | `config.toml` पूर्ण संदर्भ — प्रोवाइडेडर्स, मॉडल्स, एजेंट्स, टेलीमेट्री |
 | [CHANGELOG.md](../../CHANGELOG.md) | वर्जन इतिहास और रिलीज नोट्स |
-
-## रिसर्च
-
-collet बनाने के लिए उन समस्याओं की गहराई में जाने की आवश्यकता थी जिनके पास अभी तक स्पष्ट उत्तर नहीं हैं — सैकड़ों टर्न्स में लंबे समय तक चलने वाले एजेंट्स को सुसंगत रखने से लेकर, मल्टी-प्रोवाइडर रेट लिमिटिंग को वास्तव में काम करने तक, यह पता लगाने तक कि मल्टी-एजेंट पैरेललिज्म कब मदद करता है और कब यह सिर्फ शोर (noise) जोड़ता है।
-
-इन निर्णयों के पीछे रिसर्च और इंजीनियरिंग विश्लेषण को स्वतंत्र रिपोर्ट्स की एक श्रृंखला के रूप में प्रकाशित किया गया है:
-
-| रिपोर्ट | विषय |
-|--------|-------|
-| [एजेंट लूप](../../docs/research/agent-loop.md) | निष्पादन इंजन, गार्ड सिस्टम, स्ट्रीम रिलायबिलिटी बग्स, कॉम्पैक्शन पाइपलाइन |
-| [मल्टी-एजेंट सिस्टम्स](../../docs/research/multi-agent.md) | Fork/Hive/Flock मोड्स, SharedKnowledge ब्लैकबोर्ड, बॉटलनेक विश्लेषण, समन्वय पैटर्न |
-| [कॉन्टेक्स्ट मैनेजमेंट](../../docs/research/context-management.md) | कॉम्पैक्शन रणनीतियां, प्रॉम्प्ट कैशिंग, टोकन दक्षता, उद्योग सर्वेक्षण |
-| [मल्टी-प्रोवाइडर आर्किटेक्चर](../../docs/research/multi-provider.md) | OpenAI-संगत API डाइवर्जेंस, रेट लिमिटिंग, प्रोवाइडेड SDK डिजाइन |
-| [TUI और UX](../../docs/research/tui-ux.md) | UX मूल्यांकन, मल्टी-बाइट कर्सर हैंडलिंग, वेब UI इंटीग्रेशन |
-| [बेंचमार्किंग और मूल्यांकन](../../docs/research/benchmark-eval.md) | मॉडल/मोड बेंचमार्क्स, पॉलीग्लॉट मूल्यांकन, उत्पादकता रिसर्च |
-| [इवोल्यूशन इंजन](../../docs/research/evolution-engine.md) | सेल्फ-इम्प्रूवमेंट लूप, A-Evolve (arXiv:2602.00359), 7-चरण चक्र डिजाइन |
-| [रिमोट कंट्रोल और क्रॉस-मशीन ब्रिज](../../docs/research/remote.md) | रिमोट गेटवे, क्रॉस-मशीन एजेंट सहयोग, ACP/IDE इंटीग्रेशन |
-
-## बिल्ड जानकारी
-
-| आइटम | मान |
-|------|-------|
-| भाषा | Rust (Edition 2024) |
-| सोर्स फाइल्स | 176 |
-| कोड की लाइनें | ~65,000 |
-| टेस्ट्स | 959 |
-| रिलीज बाइनरी | ~40MB (arm64) |
 
 ## रोडमैप
 

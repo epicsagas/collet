@@ -7,11 +7,6 @@ Orchestrates any LLM, any CLI agent, across TUI, web, and IDE.
 
 Eliminates the stuck problem common in Node.js-based tools at the source, delivering high-level code intelligence and precise editing on the safety foundation of Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -58,7 +53,6 @@ Eliminates the stuck problem common in Node.js-based tools at the source, delive
 
 ### Requirements
 
-- Rust 1.78+ (Edition 2024)
 - LLM provider API key
 
 ### Installation & Running
@@ -69,7 +63,7 @@ Eliminates the stuck problem common in Node.js-based tools at the source, delive
 brew install epicsagas/tap/collet
 ```
 
-#### via cargo-binstall (fastest - pre-built binaries)
+#### via cargo-binstall (fastest — pre-built binaries)
 
 ```bash
 cargo binstall collet
@@ -78,19 +72,9 @@ cargo binstall collet
 > Requires [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) installed first:
 > `cargo install cargo-binstall`
 
-#### via crates.io
+#### Download Binary
 
-```bash
-cargo install collet
-```
-
-#### From source
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+Download the latest release for your platform from the [Releases page](https://github.com/epicsagas/collet/releases).
 
 ### Setup and Run
 ```bash
@@ -107,37 +91,9 @@ collet "hello collet!"
 
 | Document | Description |
 |----------|-------------|
-| [QUICKSTART.md](QUICKSTART.md) | Step-by-step quickstart with examples |
 | [docs/user-guide.md](docs/user-guide.md) | Complete user manual — CLI, TUI, key bindings, slash commands, multi-provider, MCP, Soul.md |
 | [docs/config.md](docs/config.md) | `config.toml` complete reference — providers, models, agents, telemetry |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
-
-## Research
-
-Building collet required going deep on problems that don't have obvious answers yet — from keeping long-running agents coherent across hundreds of turns, to making multi-provider rate limiting actually work, to figuring out when multi-agent parallelism helps and when it just adds noise.
-
-The research and engineering analysis behind these decisions is published as a series of standalone reports:
-
-| Report | Topic |
-|--------|-------|
-| [Agent Loop](docs/research/agent-loop.md) | Execution engine, guard system, stream reliability bugs, compaction pipeline |
-| [Multi-Agent Systems](docs/research/multi-agent.md) | Fork/Hive/Flock modes, SharedKnowledge blackboard, bottleneck analysis, coordination patterns |
-| [Context Management](docs/research/context-management.md) | Compaction strategies, prompt caching, token efficiency, industry survey |
-| [Multi-Provider Architecture](docs/research/multi-provider.md) | OpenAI-compatible API divergences, rate limiting, provider SDK design |
-| [TUI & UX](docs/research/tui-ux.md) | UX evaluation, multi-byte cursor handling, Web UI integration |
-| [Benchmarking & Evaluation](docs/research/benchmark-eval.md) | Model/mode benchmarks, polyglot evaluation, productivity research |
-| [Evolution Engine](docs/research/evolution-engine.md) | Self-improvement loop, A-Evolve (arXiv:2602.00359), 7-stage cycle design |
-| [Remote Control & Cross-Machine Bridge](docs/research/remote.md) | Remote gateways, cross-machine agent collaboration, ACP/IDE integration |
-
-## Build Info
-
-| Item | Value |
-|------|-------|
-| Language | Rust (Edition 2024) |
-| Source files | 176 |
-| Lines of code | ~65,000 |
-| Tests | 959 |
-| Release binary | ~40MB (arm64) |
 
 ## Roadmap
 
@@ -152,9 +108,9 @@ The research and engineering analysis behind these decisions is published as a s
 - [x] Phase 9: Soul.md persistent personality — per-agent emotion/thought/growth recording, global/per-agent toggle, auto-compaction
 - [x] Phase 10: Flock mode completion — Swarm renaming, RoleBased strategy, PlanReviewExecute pipeline, revision loop with consensus voting
 - [x] Phase 11–28: RAG document search (Alcove + HTTP Bridge), IDE integration (ACP), Remote gateways (Telegram/Slack/Discord), Web server, Auto-routing, PII filter, Optimizer, Multi-provider wizard
-- [ ] Phase 29: Agent loop & swarm hardening — zero-drop guarantee, adaptive retry, swarm consensus refinement, coordinator/worker scheduling improvements
-- [ ] Phase 30: Model optimizer advanced — provider-aware cost/latency scoring, smart tier reassignment on provider add/edit, benchmark-driven model ranking
-- [ ] Phase 31: Web & remote platform upgrade — Web UI dashboard v2, Telegram/Slack/Discord UX polish, webhook relay, real-time swarm status streaming
+- [ ] Phase 29: Agent loop & swarm hardening — zero-drop guarantee, adaptive retry, swarm consensus refinement
+- [ ] Phase 30: Model optimizer advanced — provider-aware cost/latency scoring, benchmark-driven model ranking
+- [ ] Phase 31: Web & remote platform upgrade — Web UI dashboard v2, webhook relay, real-time swarm status streaming
 
 ## Origin & Status
 

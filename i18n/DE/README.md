@@ -9,11 +9,6 @@ Orchestriert jedes LLM, jeden CLI-Agenten, über TUI, Web und IDE.
 
 Eliminiert das in Node.js-basierten Tools übliche "Stuck"-Problem an der Quelle und liefert hochgradige Code-Intelligenz und präzise Bearbeitung auf dem Sicherheitsfundament von Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,7 +42,6 @@ Eliminiert das in Node.js-basierten Tools übliche "Stuck"-Problem an der Quelle
 
 ### Anforderungen
 
-- Rust 1.78+ (Edition 2024)
 - API-Key eines LLM-Providers
 
 ### Installation & Ausführung
@@ -67,19 +61,9 @@ cargo binstall collet
 > Erfordert die vorherige Installation von [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall):
 > `cargo install cargo-binstall`
 
-#### über crates.io
+#### Binary herunterladen
 
-```bash
-cargo install collet
-```
-
-#### Aus dem Quellcode
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+Laden Sie die neueste Version von [GitHub Releases](https://github.com/epicsagas/collet/releases) herunter.
 
 ### Einrichtung und Ausführung
 ```bash
@@ -100,33 +84,6 @@ collet "hallo collet!"
 | [docs/user-guide.md](./user-guide.md) | Vollständiges Benutzerhandbuch — CLI, TUI, Tastenkombinationen, Slash-Befehle, Multi-Provider, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | `config.toml` vollständige Referenz — Provider, Modelle, Agenten, Telemetrie |
 | [CHANGELOG.md](../../CHANGELOG.md) | Versionshistorie und Release-Notes |
-
-## Forschung
-
-Der Aufbau von collet erforderte ein tiefes Eintauchen in Probleme, für die es noch keine offensichtlichen Antworten gibt — von der Aufrechterhaltung der Kohärenz lang laufender Agenten über hunderte von Runden bis hin zur tatsächlichen Funktionsfähigkeit des Multi-Provider-Rate-Limiting und der Frage, wann Multi-Agent-Parallelität hilft und wann sie nur Rauschen verursacht.
-
-Die Forschungs- und Engineering-Analysen hinter diesen Entscheidungen werden als eine Reihe eigenständiger Berichte veröffentlicht:
-
-| Bericht | Thema |
-|--------|-------|
-| [Agent Loop](../../docs/research/agent-loop.md) | Execution-Engine, Guard-System, Stream-Zuverlässigkeits-Bugs, Compaction-Pipeline |
-| [Multi-Agent-Systeme](../../docs/research/multi-agent.md) | Fork/Hive/Flock-Modi, SharedKnowledge-Blackboard, Engpassanalyse, Koordinationsmuster |
-| [Kontext-Management](../../docs/research/context-management.md) | Compaction-Strategien, Prompt-Caching, Token-Effizienz, Branchenumfrage |
-| [Multi-Provider-Architektur](../../docs/research/multi-provider.md) | OpenAI-kompatible API-Divergenzen, Rate-Limiting, Provider-SDK-Design |
-| [TUI & UX](../../docs/research/tui-ux.md) | UX-Evaluierung, Multi-Byte-Cursor-Handling, Web-UI-Integration |
-| [Benchmarking & Evaluierung](../../docs/research/benchmark-eval.md) | Modell/Modus-Benchmarks, Polyglot-Evaluierung, Produktivitätsforschung |
-| [Evolution Engine](../../docs/research/evolution-engine.md) | Selbstverbesserungsschleife, A-Evolve (arXiv:2602.00359), 7-stufiges Zyklus-Design |
-| [Fernsteuerung & Cross-Machine-Bridge](../../docs/research/remote.md) | Remote-Gateways, maschinenübergreifende Agenten-Kollaboration, ACP/IDE-Integration |
-
-## Build-Info
-
-| Element | Wert |
-|------|-------|
-| Sprache | Rust (Edition 2024) |
-| Quelldateien | 176 |
-| Codezeilen | ~65.000 |
-| Tests | 959 |
-| Release-Binary | ~40MB (arm64) |
 
 ## Roadmap
 

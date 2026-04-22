@@ -7,11 +7,6 @@ TUI, 웹, IDE 전반에서 모든 LLM과 CLI 에이전트를 조율합니다.
 
 Node.js 기반 도구에서 흔히 발생하는 '중단(stuck)' 문제를 근본적으로 해결하며, Rust의 안전한 기반 위에서 수준 높은 코드 인텔리전스와 정밀한 편집을 제공합니다.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -45,7 +40,6 @@ Node.js 기반 도구에서 흔히 발생하는 '중단(stuck)' 문제를 근본
 
 ### 요구 사항
 
-- Rust 1.78+ (Edition 2024)
 - LLM 프로바이더 API 키
 
 ### 설치 및 실행
@@ -65,19 +59,9 @@ cargo binstall collet
 > [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall)이 먼저 설치되어 있어야 합니다:
 > `cargo install cargo-binstall`
 
-#### crates.io 이용
+#### 바이너리 다운로드
 
-```bash
-cargo install collet
-```
-
-#### 소스에서 설치
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+최신 릴리스 바이너리는 [GitHub Releases](https://github.com/epicsagas/collet/releases)에서 다운로드할 수 있습니다.
 
 ### 설정 및 실행
 ```bash
@@ -98,33 +82,6 @@ collet "hello collet!"
 | [docs/user-guide.md](./user-guide.md) | 전체 사용자 매뉴얼 — CLI, TUI, 키 바인딩, 슬래시 명령어, 멀티 프로바이더, MCP, Soul.md |
 | [docs/config.md](../../docs/config.md) | `config.toml` 전체 참조 — 프로바이더, 모델, 에이전트, 원격 분석 |
 | [CHANGELOG.md](../../CHANGELOG.md) | 버전 기록 및 릴리스 노트 |
-
-## 연구
-
-collet을 구축하기 위해서는 수백 번의 턴 동안 장시간 실행되는 에이전트의 일관성을 유지하는 방법부터, 멀티 프로바이더의 속도 제한을 실제로 작동하게 만드는 방법, 그리고 멀티 에이전트 병렬화가 언제 도움이 되고 언제 노이즈만 더하는지 파악하는 것까지, 아직 명확한 답이 없는 문제들을 깊이 파고들어야 했습니다.
-
-이러한 결정 뒤에 숨겨진 연구 및 엔지니어링 분석은 일련의 독립적인 보고서로 게시되었습니다.
-
-| 보고서 | 주제 |
-|--------|-------|
-| [에이전트 루프](../../docs/research/agent-loop.md) | 실행 엔진, 보호 시스템, 스트림 안정성 버그, 압축 파이프라인 |
-| [멀티 에이전트 시스템](../../docs/research/multi-agent.md) | Fork/Hive/Flock 모드, SharedKnowledge 블랙보드, 병목 현상 분석, 조정 패턴 |
-| [컨텍스트 관리](../../docs/research/context-management.md) | 압축 전략, 프롬프트 캐싱, 토큰 효율성, 업계 조사 |
-| [멀티 프로바이더 아키텍처](../../docs/research/multi-provider.md) | OpenAI 호환 API 차이점, 속도 제한, 프로바이더 SDK 설계 |
-| [TUI & UX](../../docs/research/tui-ux.md) | UX 평가, 멀티바이트 커서 처리, 웹 UI 통합 |
-| [벤치마킹 및 평가](../../docs/research/benchmark-eval.md) | 모델/모드 벤치마크, 다국어 평가, 생산성 연구 |
-| [진화 엔진](../../docs/research/evolution-engine.md) | 자기 개선 루프, A-Evolve (arXiv:2602.00359), 7단계 사이클 설계 |
-| [원격 제어 및 머신 간 브릿지](../../docs/research/remote.md) | 원격 게이트웨이, 머신 간 에이전트 협업, ACP/IDE 통합 |
-
-## 빌드 정보
-
-| 항목 | 값 |
-|------|-------|
-| 언어 | Rust (Edition 2024) |
-| 소스 파일 수 | 176 |
-| 코드 라인 수 | 약 65,000 |
-| 테스트 수 | 959 |
-| 릴리스 바이너리 크기 | 약 40MB (arm64) |
 
 ## 로드맵
 

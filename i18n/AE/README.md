@@ -9,11 +9,6 @@
 
 يقضي على مشكلة التوقف ("stuck") الشائعة في الأدوات القائمة على Node.js من المصدر، مما يوفر ذكاء كود عالي المستوى وتحريراً دقيقاً على أساس أمان Rust.
 
-[![CI](https://github.com/epicsagas/collet/actions/workflows/release.yml/badge.svg)](https://github.com/epicsagas/collet/actions/workflows/release.yml)
-[![crates.io](https://img.shields.io/crates/v/collet.svg)](https://crates.io/crates/collet)
-[![docs.rs](https://docs.rs/collet/badge.svg)](https://docs.rs/collet)
-[![crates.io downloads](https://img.shields.io/crates/d/collet.svg)](https://crates.io/crates/collet)
-[![Rust](https://img.shields.io/badge/rust-1.78%2B-orange.svg)](https://www.rust-lang.org)
 [![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
 </center>
@@ -47,7 +42,6 @@
 
 ### المتطلبات
 
-- Rust 1.78+ (إصدار 2024)
 - مفتاح API لمزود النموذج اللغوي الكبير
 
 ### التثبيت والتشغيل
@@ -67,19 +61,10 @@ cargo binstall collet
 > يتطلب تثبيت [`cargo-binstall`](https://github.com/cargo-bins/cargo-binstall) أولاً:
 > `cargo install cargo-binstall`
 
-#### عبر crates.io
 
-```bash
-cargo install collet
-```
+#### تحميل الملف الثنائي
 
-#### من المصدر
-
-```bash
-git clone https://github.com/epicsagas/collet.git
-cd collet
-cargo install --path .
-```
+قم بتحميل أحدث إصدار من [GitHub Releases](https://github.com/epicsagas/collet/releases).
 
 ### الإعداد والتشغيل
 ```bash
@@ -101,32 +86,8 @@ collet "hello collet!"
 | [docs/config.md](../../docs/config.md) | مرجع كامل لـ `config.toml` — المزودون، النماذج، الوكلاء، القياس عن بعد |
 | [CHANGELOG.md](../../CHANGELOG.md) | سجل الإصدارات وملاحظات الإصدار |
 
-## البحث
 
-تطلب بناء collet الغوص بعمق في مشكلات ليس لها إجابات واضحة بعد — بدءاً من الحفاظ على تماسك الوكلاء الذين يعملون لفترات طويلة عبر مئات الأدوار، إلى جعل تحديد معدل الطلبات لمزودين متعددين يعمل فعلياً، إلى معرفة متى تساعد توازية الوكلاء المتعددين ومتى تضيف مجرد ضجيج.
 
-تم نشر أبحاث وتحليلات هندسية وراء هذه القرارات كسلسلة من التقارير المستقلة:
-
-| التقرير | الموضوع |
-|--------|-------|
-| [دورة الوكيل](../../docs/research/agent-loop.md) | محرك التنفيذ، نظام الحماية، أخطاء موثوقية البث، خط أنابيب الضغط |
-| [أنظمة الوكلاء المتعددين](../../docs/research/multi-agent.md) | أوضاع Fork/Hive/Flock، لوحة المعرفة المشتركة، تحليل عنق الزجاجة، أنماط التنسيق |
-| [إدارة السياق](../../docs/research/context-management.md) | استراتيجيات الضغط، التخزين المؤقت للمطالبات، كفاءة التوكنات، مسح الصناعة |
-| [بنية تعدد المزودين](../../docs/research/multi-provider.md) | اختلافات API المتوافقة مع OpenAI، تحديد معدل الطلبات، تصميم SDK للمزود |
-| [TUI & UX](../../docs/research/tui-ux.md) | تقييم تجربة المستخدم، التعامل مع المؤشر متعدد البايتات، تكامل واجهة مستخدم الويب |
-| [المقارنة والتقييم](../../docs/research/benchmark-eval.md) | مقارنات النماذج/الأوضاع، تقييم تعدد اللغات، أبحاث الإنتاجية |
-| [محرك التطور](../../docs/research/evolution-engine.md) | دورة التحسين الذاتي، A-Evolve (arXiv:2602.00359)، تصميم دورة من 7 مراحل |
-| [التحكم عن بعد وجسر عبر الآلات](../../docs/research/remote.md) | بوابات التحكم عن بعد، تعاون الوكلاء عبر الآلات، تكامل ACP/IDE |
-
-## معلومات البناء
-
-| العنصر | القيمة |
-|------|-------|
-| اللغة | Rust (إصدار 2024) |
-| ملفات المصدر | 176 |
-| أسطر الكود | ~65,000 |
-| الاختبارات | 959 |
-| ثنائي الإصدار | ~40 ميجابايت (arm64) |
 
 ## خارطة الطريق
 
