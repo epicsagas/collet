@@ -7,8 +7,19 @@ Orchestrates any LLM, any CLI agent, across TUI, web, and IDE.
 
 Eliminates the stuck problem common in Node.js-based tools at the source, delivering high-level code intelligence and precise editing on the safety foundation of Rust.
 
-[![License](https://img.shields.io/crates/l/collet.svg)](LICENSE)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/epicsaga)
+<p align="center">
+  <a href="https://github.com/epicsagas/collet/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/epicsagas/collet?style=for-the-badge&labelColor=0d1117&color=ffd700&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/epicsagas/collet/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/epicsagas/collet?style=for-the-badge&labelColor=0d1117&color=2ecc71&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/epicsagas/collet/issues"><img alt="Issues" src="https://img.shields.io/github/issues/epicsagas/collet?style=for-the-badge&labelColor=0d1117&color=ff6b6b&logo=github&logoColor=white" /></a>
+  <a href="https://github.com/epicsagas/collet/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/epicsagas/collet?style=for-the-badge&labelColor=0d1117&color=58a6ff&logo=git&logoColor=white" /></a>
+</p>
+<p align="center">
+  <a href="https://crates.io/crates/collet"><img alt="Crates.io" src="https://img.shields.io/crates/v/collet?style=for-the-badge&labelColor=0d1117&color=fc8d62&logo=rust&logoColor=white" /></a>
+  <a href="https://crates.io/crates/collet"><img alt="Downloads" src="https://img.shields.io/crates/d/collet?style=for-the-badge&labelColor=0d1117&color=3498db&logo=rust&logoColor=white" /></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-3fb950?style=for-the-badge&labelColor=0d1117" /></a>
+  <img alt="Rust" src="https://img.shields.io/badge/rust-d73a49?style=for-the-badge&labelColor=0d1117&logo=rust&logoColor=white" />
+  <a href="https://buymeacoffee.com/epicsaga"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/buy_me_a_coffee-FFDD00?style=for-the-badge&labelColor=0d1117&logo=buymeacoffee&logoColor=black" /></a>
+</p>
 </center>
 
 <p align="center">
